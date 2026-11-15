@@ -32,46 +32,11 @@ try {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Resultado do cadastro</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f3f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background: white;
-            width: 350px;
-            padding: 35px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 15px #0002;
-        }
-
-        h2 {
-            color: #222;
-        }
-
-        p {
-            color: #444;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: #1769aa;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
