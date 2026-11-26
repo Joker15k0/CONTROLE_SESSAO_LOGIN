@@ -1,5 +1,5 @@
 # Sistema de Controle de Sessão em Login
-Luiz Felipe Menezes Moreira
+Luiz Felipe Menezes Moreira \n
 Caio Guedes de Holanda
 ## 1. Sobre o projeto
 
