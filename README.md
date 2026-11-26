@@ -1,5 +1,6 @@
 # Sistema de Controle de Sessão em Login
-
+Luiz Felipe Menezes Moreira
+Caio Guedes de Holanda
 ## 1. Sobre o projeto
 
 Este projeto foi desenvolvido em Java com JSP e MariaDB, com o objetivo de implementar um sistema de autenticação e controle de sessões de usuários.
