@@ -1,0 +1,387 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #f2f6fc;
+    color: #142b4a;
+}
+
+/* CABEÇALHO */
+
+.topbar {
+    height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 21px;
+    font-weight: bold;
+    color: #123c69;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    font-size: 32px;
+    color: #1684d8;
+}
+
+.logo strong {
+    color: #1684d8;
+}
+
+.top-message {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.main-content {
+    max-width: 1200px;
+    min-height: calc(100vh - 140px);
+    margin: auto;
+    padding: 65px 35px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    align-items: center;
+    gap: 70px;
+}
+
+/* APRESENTAÇÃO */
+
+.presentation {
+    color: white;
+    background: linear-gradient(135deg, #092b50, #0877bd);
+    padding: 65px 45px;
+    border-radius: 24px;
+    min-height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.presentation::after {
+    content: "✈";
+    position: absolute;
+    right: -25px;
+    bottom: -85px;
+    font-size: 270px;
+    color: rgba(255,255,255,0.08);
+    transform: rotate(-15deg);
+}
+
+.plane-icon {
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.tagline {
+    color: #83d4ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.presentation h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.presentation p {
+    max-width: 440px;
+    color: #d9eaff;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.features {
+    display: grid;
+    gap: 17px;
+    margin-top: 35px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* CARTÃO DE LOGIN */
+
+.login-card {
+    background: white;
+    padding: 40px 32px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(24,60,100,0.10);
+    text-align: center;
+}
+
+.card-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    background: #e8f4ff;
+    color: #0877bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.login-card h2 {
+    font-size: 25px;
+    color: #123c69;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #8492a6;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* FORMULÁRIO */
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    color: #263e5c;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+input {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #dce5ef;
+    border-radius: 9px;
+    margin-bottom: 22px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #1684d8;
+    box-shadow: 0 0 0 3px rgba(22,132,216,0.12);
+}
+
+/* BOTÃO */
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(90deg, #0877bd, #1454a0);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(8,119,189,0.25);
+}
+
+button span {
+    margin-left: 8px;
+    font-size: 19px;
+}
+
+/* CADASTRO */
+
+.register {
+    border-top: 1px solid #edf0f5;
+    margin-top: 25px;
+    padding-top: 22px;
+}
+
+.register p {
+    font-size: 13px;
+    color: #8492a6;
+    margin-bottom: 10px;
+}
+
+.register a {
+    color: #0877bd;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+.secure {
+    margin-top: 25px;
+    color: #8492a6;
+    font-size: 12px;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #8492a6;
+    font-size: 12px;
+}
+
+/* CELULAR */
+
+@media (max-width: 850px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 35px 20px;
+    }
+
+    .main-content {
+    max-width: 1050px;
+    padding: 40px 25px;
+    gap: 45px;
+}
+
+.presentation {
+    padding: 45px 35px;
+    min-height: 420px;
+}
+
+.presentation h1 {
+    font-size: 36px;
+}
+
+.login-card {
+    max-width: 390px;
+    padding: 32px 26px;
+}
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .top-message {
+        display: none;
+    }
+}
+
+
+
+/* Fundo azul do World Airplane */
+
+body {
+    background: linear-gradient(135deg, #dbeafe, #0077ff, #60a5fa);
+}
+
+/* Cabeçalho branco */
+.topbar {
+    background: #ffffff;
+}
+
+/* Cartão de cadastro */
+.login-card {
+    background: #ffffff;
+}
+
+/* Identidade azul */
+.logo,
+.login-card h2,
+.register a {
+    color: #0022ff;
+}
+
+
+/* RESULTADO DO CADASTRO */
+
+.result-main {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.result-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    padding: 45px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(24, 60, 100, 0.12);
+}
+
+.result-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: #e0f2fe;
+    color: #0877bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.error-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.result-card h1 {
+    color: #123c69;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    color: #718096;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.result-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(90deg, #0877bd, #1454a0);
+    color: white;
+    text-decoration: none;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.result-button:hover {
+    transform: translateY(-2px);
+}
+
+.result-card .secure {
+    margin-top: 30px;
+    font-size: 12px;
+}
