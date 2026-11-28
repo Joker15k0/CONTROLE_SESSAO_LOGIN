@@ -5,10 +5,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioDAO {
 
-    // CADASTRAR USUARIO: cadastro publico sempre cria USUARIO
+    // CADASTRAR USUARIO
     public boolean cadastrar(String usuario, String senha) throws Exception {
 
         if (usuario == null || usuario.trim().isEmpty()
@@ -44,8 +46,7 @@ public class UsuarioDAO {
         }
     }
 
-    // AUTENTICAR E RETORNAR O PERFIL DO USUARIO
-    // Retorna "USUARIO", "ADMIN" ou null se o login falhar.
+    // AUTENTICAR E RETORNAR PERFIL
     public String autenticarEAtualizarTokenEObterPerfil(
             String usuario,
             String senha,
@@ -175,5 +176,64 @@ public class UsuarioDAO {
 
             comando.executeUpdate();
         }
+    }
+
+    // LISTAR PASSAGEIROS CADASTRADOS
+    public List<String[]> listarPassageiros() throws SQLException {
+
+        List<String[]> passageiros = new ArrayList<>();
+
+        String sql = """
+            SELECT id, usuario
+            FROM autenticacaoMais
+            WHERE tipo_usuario = 'USUARIO'
+            ORDER BY usuario
+            """;
+
+        try (Connection conexao = Conexao.conectar();
+             PreparedStatement comando = conexao.prepareStatement(sql);
+             ResultSet resultado = comando.executeQuery()) {
+
+            while (resultado.next()) {
+
+                String[] passageiro = {
+                    String.valueOf(resultado.getInt("id")),
+                    resultado.getString("usuario")
+                };
+
+                passageiros.add(passageiro);
+            }
+        }
+
+        return passageiros;
+    }
+
+    // BUSCAR PASSAGEIRO PELO ID
+    public String[] buscarPassageiroPorId(int id) throws SQLException {
+
+        String sql = """
+            SELECT id, usuario
+            FROM autenticacaoMais
+            WHERE id = ?
+              AND tipo_usuario = 'USUARIO'
+            """;
+
+        try (Connection conexao = Conexao.conectar();
+             PreparedStatement comando = conexao.prepareStatement(sql)) {
+
+            comando.setInt(1, id);
+
+            try (ResultSet resultado = comando.executeQuery()) {
+
+                if (resultado.next()) {
+                    return new String[] {
+                        String.valueOf(resultado.getInt("id")),
+                        resultado.getString("usuario")
+                    };
+                }
+            }
+        }
+
+        return null;
     }
 }

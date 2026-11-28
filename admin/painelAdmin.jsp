@@ -34,7 +34,6 @@ if (!dao.validarToken(usuario, token, session.getId())) {
     <title>Painel Administrativo - World Airplane</title>
     <link rel="stylesheet" href="../css/estilo.css">
 
-    
     <style>
         .admin-container {
             max-width: 1100px;
@@ -79,11 +78,15 @@ if (!dao.validarToken(usuario, token, session.getId())) {
             text-decoration: none;
         }
 
+        .admin-card a:hover {
+            text-decoration: underline;
+        }
+
         .admin-logout {
             display: inline-block;
             margin-top: 20px;
-            color: white;
-            text-decoration: none;
+            color: white !important;
+            text-decoration: none !important;
             background: #dc3545;
             padding: 10px 18px;
             border-radius: 8px;
@@ -116,16 +119,16 @@ if (!dao.validarToken(usuario, token, session.getId())) {
         <article class="admin-card">
             <h2>✈️ Voos</h2>
             <p>Cadastrar e gerenciar voos.</p>
-            <a href="#">Gerenciar voos</a>
-            <a href="cadastrarVoo.jsp" class="btn">
-    Cadastrar novo voo
-</a>
+
+            <a href="listarVoos.jsp">Gerenciar voos</a>
+            <br>
+            <a href="cadastrarVoo.jsp" class="btn">Cadastrar novo voo</a>
         </article>
 
         <article class="admin-card">
             <h2>👥 Passageiros</h2>
             <p>Consultar passageiros cadastrados.</p>
-            <a href="#">Ver passageiros</a>
+            <a href="listarPassageiros.jsp">Ver passageiros</a>
         </article>
 
         <article class="admin-card">
